@@ -17,3 +17,7 @@ connectDB()
 .catch((error) => {
     console.log('Error connecting to MongoDB:', error);
 })
+
+
+// didnt did anything on backend from two days ??
+//bad days for MongoDB

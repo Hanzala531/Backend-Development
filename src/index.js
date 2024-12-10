@@ -1,6 +1,6 @@
 import connectDB from './db/index.js';
 import dotenv from 'dotenv';
-import { app } from './app.js';
+import { app } from './app.js'; // Add this line to import the app
 
 dotenv.config({
     path: './.env'
@@ -19,5 +19,3 @@ connectDB()
 })
 
 
-// didnt did anything on backend from two days ??
-//bad days for MongoDB

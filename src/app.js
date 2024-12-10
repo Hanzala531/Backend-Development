@@ -30,7 +30,7 @@ app.use(cookieParser());
 
 //Routes
 
-import { userRouter } from "./routes/user.routes.js";
+import { userRouter } from './routes/user.routes.js'; // Correct the path
 
 //declaration
 

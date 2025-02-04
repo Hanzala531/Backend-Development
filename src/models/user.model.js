@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         lowercase: true,
         trim: true,
-        indexe: true
+        index: true
     },
     email: {
         type: String,
@@ -33,7 +33,7 @@ const userSchema = new mongoose.Schema({
         type : String
     },
     watchhistory: {
-        type: Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         reff: "Video"
     },
     password: {
@@ -79,7 +79,7 @@ userSchema.methods.generateAccessToken = function () {
         },
         process.env.ACCESS_TOKEN_SECRET,
         {
-            expiresIn : process.env.ACCESS_TOKEN_EXPIRY;
+            expiresIn : process.env.ACCESS_TOKEN_EXPIRY,
         }
     )
 }
@@ -89,11 +89,11 @@ userSchema.methods.generateAccessToken = function () {
 userSchema.methods.generateRefreshToken = function () {
     return jwt.sign(
         {
-            _id : this._id;
+            _id : this._id,
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
-        expiresIn : process.env.REFRESH_TOKEN_EXPIRY;
+        expiresIn : process.env.REFRESH_TOKEN_EXPIRY,
         }
     )
 }
